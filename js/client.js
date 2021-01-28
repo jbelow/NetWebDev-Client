@@ -14,3 +14,11 @@ $(function () {
         $('#toast').toast({ autohide: false }).toast('show');
     });
 });
+
+$(document).keydown(function(e) {
+    // ESCAPE key pressed
+    if (e.keyCode == 27) {
+        // $(toast).delete(); // this just makes it so that it can never come back
+        document.getElementById("closeToast").click(); 
+    }
+});
