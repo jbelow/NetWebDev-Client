@@ -27,9 +27,13 @@ $(function () {
             $('#' + this.id + 'Img').addClass('animate__animated animate__bounceOutUp');
     });
 
-    //event listener for the submit button
+    // event listener for the submit button
     $('#submit').click(function() {
-        alert( "Handler for .click() called." );
-      });
+        $('.toast').toast('show');
+
+        // if (condition) {
+            
+        // }
+    });
 
 });
