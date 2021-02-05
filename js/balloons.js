@@ -4,11 +4,10 @@ $(function () {
     window.onload = function ranHeaderClass() {
         let animateList = ['animate__animated animate__flash', 'animate__animated animate__headShake', 'animate__animated animate__heartBeat', 'animate__animated animate__tada'];
 
-        animateRandom = animateList[Math.floor(Math.random()*animateList.length)];
+        animateRandom = animateList[Math.floor(Math.random() * animateList.length)];
 
         $('#happyHeader').addClass(animateRandom);
 
-        console.log(animateRandom);
     }
     $('#birthday').pickadate({ format: 'mmmm, d' });
 
@@ -28,12 +27,15 @@ $(function () {
     });
 
     // event listener for the submit button
-    $('#submit').click(function() {
-        $('.toast').toast('show');
+    $('#submit').click(function () {
 
-        // if (condition) {
-            
-        // }
+        var isChecked = $('.form-check-input:checked').val();
+        // console.log(isChecked);
+
+        if (isChecked == undefined) {
+            $('.toast').toast({ autohide: false }).toast('show');
+        }
+
     });
 
 });
