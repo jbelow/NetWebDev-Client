@@ -40,6 +40,20 @@
             top: 65px;
             right: 10px;
         }
+
+        .colorBlue {
+            color: blue;
+        }
+
+        .colorGreen {
+            color: rgb(38, 179, 25);
+        }
+
+        .colorBlueGreen {
+            color: rgb(18, 141, 131);
+        }
+
+        
     </style>
 </head>
 
@@ -64,7 +78,6 @@
 
         <h1 id="happyHeader">Happy Birthday!</h1>
         <hr />
-        <hr />
         <form role="form">
             <div class="row">
                 <div class="col-sm">
@@ -79,17 +92,22 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Select your favorite balloons</h5>
-                            <div class="form-group form-check">
+                            <div class="form-group form-check hoverGroup" id="colorBlueGreen">
                                 <input type="checkbox" class="form-check-input" id="blueGreen">
                                 <label class="form-check-label" for="blueGreen">Blue green balloons</label>
                             </div>
-                            <div class="form-group form-check">
+                            <div class="form-group form-check hoverGroup" id="colorGreen">
                                 <input type="checkbox" class="form-check-input" id="green">
                                 <label class="form-check-label" for="green">Green balloons</label>
                             </div>
-                            <div class="form-group form-check">
+                            <div class="form-group form-check hoverGroup" id="colorBlue">
                                 <input type="checkbox" class="form-check-input" id="blue">
                                 <label class="form-check-label" for="blue">Blue balloons</label>
+                            </div>
+                            <br>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="allBalloons">
+                                <label class="form-check-label" for="allBalloons">All balloons</label>
                             </div>
                         </div>
                     </div>

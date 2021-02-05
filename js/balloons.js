@@ -18,24 +18,53 @@ $(function () {
 
     // event listener for check/uncheck
     $('.form-check-input').on('change', function () {
-        // make the image visible
-        $('#' + this.id + 'Img').css('visibility', 'visible')
-        // animate balloon in/out based on checkbox
-        $(this).is(':checked') ?
-            $('#' + this.id + 'Img').removeClass().addClass('animate__animated animate__bounceInDown') :
-            $('#' + this.id + 'Img').addClass('animate__animated animate__bounceOutUp');
+        checkingTheCheck(this);
+    });
+
+    //all balloons check input
+    $('#allBalloons').click(function () {
+        let trufal = true;
+        //this will get the 
+        var isChecked = $('#allBalloons:checked').val();
+
+        if (isChecked == undefined) {
+            trufal = false
+        }
+
+        $('.form-check-input').each(function () {
+            $(this).prop('checked', trufal);
+            checkingTheCheck(this);
+        });
+
     });
 
     // event listener for the submit button
     $('#submit').click(function () {
-
         var isChecked = $('.form-check-input:checked').val();
         // console.log(isChecked);
-
         if (isChecked == undefined) {
             $('.toast').toast({ autohide: false }).toast('show');
         }
 
     });
+
+
+    //When hovering over the check list items
+    $('.hoverGroup').hover(function () {
+        console.log(this.id)
+        $('#happyHeader').addClass(this.id);
+    }, function () {
+        $('#happyHeader').removeClass(this.id);
+    });
+
+
+    function checkingTheCheck(balloon) {
+        // make the image visible
+        $('#' + balloon.id + 'Img').css('visibility', 'visible')
+        // animate balloon in/out based on checkbox
+        $(balloon).is(':checked') ?
+            $('#' + balloon.id + 'Img').removeClass().addClass('animate__animated animate__bounceInDown') :
+            $('#' + balloon.id + 'Img').addClass('animate__animated animate__bounceOutUp');
+    };
 
 });
